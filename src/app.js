@@ -1,11 +1,9 @@
 import express from 'express';
 
-const app=express();
+const app = express();
 
-
-app.get('/',(req,res)=>{
-    res.status(200).send('Hello from aquisa server!');
+app.get('/', (req, res) => {
+  res.status(200).send('Hello from aquisa server!');
 });
-
 
 export default app;
