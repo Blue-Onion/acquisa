@@ -1,4 +1,5 @@
 import logger from "#config/logger.js";
+import { signUpSchema } from "#utils/auth.validation.js";
 import { formarValidationError } from "#utils/format.js";
 
 export const signUp=(req,res,next)=>{
