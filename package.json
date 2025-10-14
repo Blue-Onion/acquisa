@@ -9,7 +9,8 @@
     "#controllers/*": "./src/controllers/*",
     "#routes/*": "./src/routes/*",
     "#middlewares/*": "./src/middlewares/*",
-    "#utils/*": "./src/utils/*"
+    "#utils/*": "./src/utils/*",
+    "#services/*": "./src/services/*"
   },
   "scripts": {
     "dev": "node --watch src/index.js",
@@ -36,6 +37,7 @@
   "homepage": "https://github.com/Blue-Onion/acquisa#readme",
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
+    "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

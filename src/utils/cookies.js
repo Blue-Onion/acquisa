@@ -6,10 +6,10 @@ export const cookies = {
     maxAge: 15 * 60 * 1000, //15 min
   }),
   set: (res, name, value, options = {}) => {
-    res.cookies(name, value, { ...cookies.getOptions(), ...options });
+    res.cookie(name, value, { ...cookies.getOptions(), ...options });
   },
   clear: (res, name, options = {}) => {
-    res.clear(name, { ...cookies.getOptions(), ...options });
+    res.clearCookie(name, { ...cookies.getOptions(), ...options });
   },
   get: (req, name) => {
     return req.cookies[name];
