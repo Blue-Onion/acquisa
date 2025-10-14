@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "Acquisa Auth API",
+    "description": "Authentication API endpoints for the Acquisa backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Sign Up - Admin User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\",\n  \"role\": \"admin\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/sign-up",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "sign-up"]
+        }
+      }
+    },
+    {
+      "name": "Sign Up - Regular User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Smith\",\n  \"email\": \"jane.smith@example.com\",\n  \"password\": \"mypassword456\",\n  \"role\": \"user\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/sign-up",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "sign-up"]
+        }
+      }
+    },
+    {
+      "name": "Sign Up - Default Role",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bob Wilson\",\n  \"email\": \"bob.wilson@example.com\",\n  \"password\": \"securepass789\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/sign-up",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "sign-up"]
+        }
+      }
+    },
+    {
+      "name": "Sign In - Admin",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/sign-in",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "sign-in"]
+        }
+      }
+    },
+    {
+      "name": "Sign In - User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"jane.smith@example.com\",\n  \"password\": \"mypassword456\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/sign-in",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "sign-in"]
+        }
+      }
+    },
+    {
+      "name": "Sign Out",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/sign-out",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "sign-out"]
+        }
+      }
+    },
+    {
+      "name": "Validation Tests",
+      "item": [
+        {
+          "name": "Sign Up - Short Name (Invalid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jo\",\n  \"email\": \"jo@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/sign-up",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "sign-up"]
+            }
+          }
+        },
+        {
+          "name": "Sign Up - Invalid Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"invalid-email\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/sign-up",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "sign-up"]
+            }
+          }
+        },
+        {
+          "name": "Sign Up - Short Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/sign-up",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "sign-up"]
+            }
+          }
+        },
+        {
+          "name": "Sign In - Invalid Credentials",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"nonexistent@example.com\",\n  \"password\": \"wrongpassword\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/sign-in",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "sign-in"]
+            }
+          }
+        },
+        {
+          "name": "Sign In - Wrong Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"wrongpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/sign-in",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "sign-in"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
